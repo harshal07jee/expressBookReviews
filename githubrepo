@@ -1,0 +1,16 @@
+curl -s https://api.github.com/repos/harshal07jee/expressBookReviews
+{
+  "id": 1229040721,
+  "name": "expressBookReviews",
+  "full_name": "harshal07jee/expressBookReviews",
+  "private": false,
+  "fork": true,
+  "parent": {
+    "full_name": "ibm-developer-skills-network/expressBookReviews",
+    "html_url": "https://github.com/ibm-developer-skills-network/expressBookReviews"
+  },
+  "source": {
+    "full_name": "ibm-developer-skills-network/expressBookReviews",
+    "html_url": "https://github.com/ibm-developer-skills-network/expressBookReviews"
+  }
+}
