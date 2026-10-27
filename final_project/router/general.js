@@ -195,4 +195,53 @@ public_users.get('/async/title/:title', async (req, res) => {
   }
 });
 
+// ============================================================================
+// Tasks 10-13: Client-side Axios Functions using Promise Callbacks / Async-Await
+// ============================================================================
+
+// Task 10: Get all books using async/await with Axios
+async function getAllBooksWithAxios() {
+  try {
+    const response = await axios.get("http://localhost:5000/");
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching books:", error.message);
+    throw error;
+  }
+}
+
+// Task 11: Get book details based on ISBN using Promise callbacks with Axios
+function getBookByISBNWithAxios(isbn) {
+  return axios.get(`http://localhost:5000/isbn/${isbn}`)
+    .then((response) => response.data)
+    .catch((error) => {
+      console.error(`Error fetching book with ISBN ${isbn}:`, error.message);
+      throw error;
+    });
+}
+
+// Task 12: Get book details based on Author using Promise callbacks with Axios
+function getBooksByAuthorWithAxios(author) {
+  return axios.get(`http://localhost:5000/author/${encodeURIComponent(author)}`)
+    .then((response) => response.data)
+    .catch((error) => {
+      console.error(`Error fetching books by author ${author}:`, error.message);
+      throw error;
+    });
+}
+
+// Task 13: Get book details based on Title using Promise callbacks with Axios
+function getBooksByTitleWithAxios(title) {
+  return axios.get(`http://localhost:5000/title/${encodeURIComponent(title)}`)
+    .then((response) => response.data)
+    .catch((error) => {
+      console.error(`Error fetching books with title ${title}:`, error.message);
+      throw error;
+    });
+}
+
 module.exports.general = public_users;
+module.exports.getAllBooksWithAxios = getAllBooksWithAxios;
+module.exports.getBookByISBNWithAxios = getBookByISBNWithAxios;
+module.exports.getBooksByAuthorWithAxios = getBooksByAuthorWithAxios;
+module.exports.getBooksByTitleWithAxios = getBooksByTitleWithAxios;
